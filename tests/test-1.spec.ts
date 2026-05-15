@@ -1,0 +1,33 @@
+import { test, expect } from '@playwright/test';
+
+test('test', async ({ page }) => {
+  await page.getByTestId('nav-sign-in').click();
+  await page.getByTestId('nav-sign-in').click();
+  await page.getByTestId('register-link').click();
+  await page.getByTestId('first-name').click();
+  await page.getByTestId('first-name').fill('Testy');
+  await page.getByTestId('first-name').press('Tab');
+  await page.getByTestId('last-name').fill('Tester');
+  await page.getByTestId('last-name').press('Tab');
+  await page.getByTestId('dob').fill('1990-12-11');
+  await page.getByTestId('dob').press('Tab');
+  await page.getByTestId('country').selectOption('PK');
+  await page.getByTestId('postal_code').click();
+  await page.getByTestId('postal_code').fill('54000');
+  await page.getByTestId('postal_code').press('Tab');
+  await page.getByTestId('house_number').fill('648589937737');
+  await page.getByTestId('street').click();
+  await page.getByTestId('street').fill('Your Street');
+  await page.getByTestId('street').press('Tab');
+  await page.getByTestId('city').fill('Your City');
+  await page.getByTestId('city').press('Tab');
+  await page.getByTestId('state').fill('Your State');
+  await page.getByTestId('phone').click();
+  await page.getByTestId('phone').fill('783877488948373');
+  await page.getByTestId('email').click();
+  await page.getByTestId('email').fill('testytester1@gmail.com');
+  await page.getByTestId('email').press('Tab');
+  await page.getByTestId('password').fill('WhatsNew7235!@#$');
+  await page.getByTestId('register-form').getByRole('button').filter({ hasText: /^$/ }).click();
+  await page.getByTestId('register-submit').click();
+});
